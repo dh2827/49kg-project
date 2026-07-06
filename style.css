@@ -1,14 +1,17 @@
-body{margin:0;background:#edf5ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#243b53}
-.wrap{max-width:430px;margin:auto;padding:20px}
+body{margin:0;background:#eef6ff;font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:#1e3a5f}
+.wrap{max-width:430px;margin:auto;padding:18px}
 .hero{text-align:center}
-.weightCard,.card{background:#fff;border-radius:22px;padding:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);margin-bottom:18px}
-.big{font-size:36px;font-weight:700;color:#3b82f6;margin:10px 0}
-.goal{color:#6b7280}
-.bar{height:12px;background:#e5e7eb;border-radius:99px;overflow:hidden;margin-top:12px}
-#progress{height:100%;width:0;background:linear-gradient(90deg,#60a5fa,#93c5fd)}
-button{width:100%;padding:14px;border:none;border-radius:14px;background:#60a5fa;color:#fff;font-size:16px;font-weight:600;margin-top:10px}
-input{width:100%;padding:12px;border-radius:12px;border:1px solid #cbd5e1;box-sizing:border-box}
-#meal{margin-top:14px;line-height:1.8}
-#waterGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.drop{padding:12px;border-radius:12px;background:#f8fafc;text-align:center;border:1px solid #dbeafe;cursor:pointer}
-.on{background:#bfdbfe}
+.card{background:#fff;border-radius:22px;padding:18px;margin:16px 0;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.row{display:flex;justify-content:space-between;align-items:center}
+.progress{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:12px 0}
+#progress{height:100%;width:0;background:linear-gradient(90deg,#60a5fa,#38bdf8)}
+input,button{width:100%;box-sizing:border-box;padding:12px;border-radius:14px;font-size:16px}
+input{border:1px solid #cbd5e1;margin:10px 0}
+button{border:none;background:#60a5fa;color:white;margin-top:8px}
+button.ghost{background:#dbeafe;color:#1e3a5f}
+.mealCard{background:#f8fbff;border:1px solid #dbeafe;border-radius:16px;padding:14px;line-height:1.8;min-height:90px;transition:.25s}
+.mealCard.flash{transform:scale(1.03)}
+#waterGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.drop{padding:12px;text-align:center;border-radius:12px;background:#f8fafc;border:1px solid #cfe3ff}
+.on{background:#93c5fd}
+ul{padding-left:20px}
