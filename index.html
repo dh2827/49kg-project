@@ -1,27 +1,38 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
-<title>49kg Project</title>
-</head>
+<title>49kg Project</title></head>
 <body>
-<div class="card">
+<div class="wrap">
+<div class="hero">
 <h1>💙 49kg Project</h1>
-<p>目標：49 kg</p>
-<label>目前體重(kg)</label>
-<input id="weight" type="number" step="0.1">
-<button onclick="saveWeight()">儲存體重</button>
-<p id="last"></p>
-<hr>
-<h2>🎲 今天吃什麼</h2>
-<button onclick="draw()">抽餐</button>
+<p id="today"></p>
+<div class="weightCard">
+<div>目前體重</div>
+<div class="big" id="currentWeight">55.7 kg</div>
+<div class="goal">🎯 Goal：49 kg</div>
+<div class="bar"><div id="progress"></div></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🍱 今天吃什麼</h2>
+<button onclick="drawMeal()">🎲 抽今天菜單</button>
 <div id="meal"></div>
-<hr>
+</div>
+
+<div class="card">
+<h2>⚖️ 體重紀錄</h2>
+<input id="weightInput" type="number" step="0.1" placeholder="例如 55.7">
+<button onclick="saveWeight()">儲存</button>
+</div>
+
+<div class="card">
 <h2>💧 喝水</h2>
-<div id="water"></div>
+<div id="waterGrid"></div>
+</div>
 </div>
 <script src="app.js"></script>
 </body></html>
