@@ -1,0 +1,6 @@
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#eef6ff;padding:20px}
+.card{max-width:430px;margin:auto;background:#fff;border-radius:20px;padding:20px;box-shadow:0 8px 18px rgba(0,0,0,.08)}
+button{width:100%;padding:12px;margin:8px 0;border:none;border-radius:12px;background:#6ea8fe;color:#fff;font-size:16px}
+input{width:100%;padding:10px;border-radius:10px;border:1px solid #ccc}
+#water button{width:42px;margin:4px;background:#fff;color:#333;border:1px solid #ddd}
+.on{background:#8fd3ff !important}

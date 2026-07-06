@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>49kg Project</title>
+</head>
+<body>
+<div class="card">
+<h1>💙 49kg Project</h1>
+<p>目標：49 kg</p>
+<label>目前體重(kg)</label>
+<input id="weight" type="number" step="0.1">
+<button onclick="saveWeight()">儲存體重</button>
+<p id="last"></p>
+<hr>
+<h2>🎲 今天吃什麼</h2>
+<button onclick="draw()">抽餐</button>
+<div id="meal"></div>
+<hr>
+<h2>💧 喝水</h2>
+<div id="water"></div>
+</div>
+<script src="app.js"></script>
+</body></html>
