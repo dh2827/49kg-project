@@ -1,3 +1,5 @@
+const defaultFoodDB={breakfast:["🏪 茶葉蛋+無糖豆漿","🏪 鮪魚三明治","🏪 飯糰+豆漿","🏪 雞胸肉","🏪 地瓜+茶葉蛋"],dinner:["🐔 鹹水雞","🍢 滷味","🥗 蛋白盒子","🏪 健康餐盒","🏪 雞胸沙拉"]};
+function getFoodDB(){let db=localStorage.getItem("foodDB");if(!db){localStorage.setItem("foodDB",JSON.stringify(defaultFoodDB));return defaultFoodDB;}return JSON.parse(db);}
 const meals={
 all:["🐔 鹹水雞","🍢 滷味","🥗 蛋白盒子","🏪 超商"],
 meat:["🐔 鹹水雞","🥗 蛋白盒子","🍢 滷味"],
@@ -38,31 +40,5 @@ c.stroke();
 update(parseFloat(localStorage.getItem("weight")||55.7));
 if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js');}
 
-
-// ===== v0.5 Custom Food Database =====
-const DEFAULT_FOOD_DB={
- breakfast:[
-  "茶葉蛋＋無糖豆漿",
-  "御飯糰＋無糖豆漿",
-  "雞胸肉",
-  "地瓜＋茶葉蛋",
-  "鮪魚三明治"
- ],
- dinner:[
-  "鹹水雞",
-  "滷味",
-  "蛋白盒子",
-  "超商健康餐盒",
-  "雞胸肉沙拉"
- ]
-};
-
-function getFoodDB(){
- const db=localStorage.getItem("foodDB");
- if(db) return JSON.parse(db);
- localStorage.setItem("foodDB",JSON.stringify(DEFAULT_FOOD_DB));
- return DEFAULT_FOOD_DB;
-}
-function saveFoodDB(db){
- localStorage.setItem("foodDB",JSON.stringify(db));
-}
+function drawBreakfast(){const db=getFoodDB();return db.breakfast[Math.floor(Math.random()*db.breakfast.length)]}
+function drawDinner(){const db=getFoodDB();return db.dinner[Math.floor(Math.random()*db.dinner.length)]}
