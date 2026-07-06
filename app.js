@@ -1,5 +1,3 @@
-const defaultFoodDB={breakfast:["🏪 茶葉蛋+無糖豆漿","🏪 鮪魚三明治","🏪 飯糰+豆漿","🏪 雞胸肉","🏪 地瓜+茶葉蛋"],dinner:["🐔 鹹水雞","🍢 滷味","🥗 蛋白盒子","🏪 健康餐盒","🏪 雞胸沙拉"]};
-function getFoodDB(){let db=localStorage.getItem("foodDB");if(!db){localStorage.setItem("foodDB",JSON.stringify(defaultFoodDB));return defaultFoodDB;}return JSON.parse(db);}
 const meals={
 all:["🐔 鹹水雞","🍢 滷味","🥗 蛋白盒子","🏪 超商"],
 meat:["🐔 鹹水雞","🥗 蛋白盒子","🍢 滷味"],
@@ -40,5 +38,29 @@ c.stroke();
 update(parseFloat(localStorage.getItem("weight")||55.7));
 if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js');}
 
-function drawBreakfast(){const db=getFoodDB();return db.breakfast[Math.floor(Math.random()*db.breakfast.length)]}
-function drawDinner(){const db=getFoodDB();return db.dinner[Math.floor(Math.random()*db.dinner.length)]}
+const defaultFoodDB={
+ breakfast:["🏪 茶葉蛋＋無糖豆漿","🏪 鮪魚三明治","🏪 飯糰＋豆漿","🏪 地瓜＋茶葉蛋"],
+ dinner:["🐔 鹹水雞","🍢 滷味","🥗 蛋白盒子","🏪 健康餐盒"]
+};
+function getFoodDB(){
+ let db=localStorage.getItem("foodDB");
+ if(!db){localStorage.setItem("foodDB",JSON.stringify(defaultFoodDB));db=JSON.stringify(defaultFoodDB);}
+ return JSON.parse(db);
+}
+function addFood(){
+ const name=foodName.value.trim();
+ if(!name)return;
+ const db=getFoodDB();
+ db[mealType.value].push(name);
+ localStorage.setItem("foodDB",JSON.stringify(db));
+ foodName.value="";
+ alert("已新增");
+}
+function drawBreakfast(){
+ const arr=getFoodDB().breakfast;
+ meal.innerHTML="<div style='padding:14px;background:#f8fbff;border-radius:14px'>"+arr[Math.floor(Math.random()*arr.length)]+"</div>";
+}
+function drawDinner(){
+ const arr=getFoodDB().dinner;
+ meal.innerHTML="<div style='padding:14px;background:#f8fbff;border-radius:14px'>"+arr[Math.floor(Math.random()*arr.length)]+"</div>";
+}

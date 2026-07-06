@@ -14,14 +14,13 @@
 </div>
 
 <div class="card">
-<h2>🍱 智慧抽餐</h2>
-<select id="mode">
-<option value="all">全部</option>
-<option value="meat">今天想吃肉</option>
-<option value="cheap">今天想省錢</option>
-<option value="store">今天超商</option>
-</select>
-<button onclick="draw()">🎲 抽餐</button>
+<h2>🍳 早餐 / 🌙 晚餐</h2>
+<button onclick="drawBreakfast()">🎲 抽早餐</button>
+<button onclick="drawDinner()">🎲 抽晚餐</button>
+<h3>我的餐點資料庫</h3>
+<select id="mealType"><option value="breakfast">早餐</option><option value="dinner">晚餐</option></select>
+<input id="foodName" placeholder="新增餐點">
+<button onclick="addFood()">新增</button>
 <div id="meal"></div>
 </div>
 
