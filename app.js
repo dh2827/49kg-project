@@ -64,3 +64,8 @@ function drawDinner(){
  const arr=getFoodDB().dinner;
  meal.innerHTML="<div style='padding:14px;background:#f8fbff;border-radius:14px'>"+arr[Math.floor(Math.random()*arr.length)]+"</div>";
 }
+
+function addWater(){let v=(+localStorage.getItem("water")||0)+250;localStorage.setItem("water",v);document.getElementById("waterVal").textContent=v;}
+function saveExercise(){localStorage.setItem("exercise",document.getElementById("exercise").value);incStreak();alert("已儲存");}
+function incStreak(){const d=new Date().toISOString().slice(0,10);if(localStorage.getItem("last")!==d){let n=(+localStorage.getItem("streak")||0)+1;localStorage.setItem("streak",n);localStorage.setItem("last",d);document.getElementById("streak").textContent=n;}}
+window.addEventListener("load",()=>{document.getElementById("waterVal").textContent=localStorage.getItem("water")||0;document.getElementById("exercise").value=localStorage.getItem("exercise")||"";document.getElementById("streak").textContent=localStorage.getItem("streak")||0;});
